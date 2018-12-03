@@ -3,7 +3,6 @@
 # @File    : aaa.py
 # @Author  : 守望@天空~
 """HTMLTestRunner 截图版示例 appium版"""
-import time
 import sys
 from webbrowser import browser
 
@@ -12,7 +11,7 @@ import unittest
 from HTMLTestRunner_cn import HTMLTestRunner
 sys.path.append('D:\machine_Learning\machine_pycharm\Common')
 from selenium.webdriver.common.keys import Keys
-from CommonSdk.log.log.AppLog import *
+from CommonSdk.log.AppLog import *
 
 class case_01(unittest.TestCase):
 
@@ -181,7 +180,8 @@ class case_02(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    testdir = r"D:\machine_Learning\machine_pycharm\Common\CommonSdk\output"
+    dir = os.path.abspath(os.path.join(os.path.dirname('TestReport3.py'),os.path.pardir))+"\output"
+    testdir = r''+dir
     now = time.strftime('%Y-%m-%d-%H_%M_%S', time.localtime(time.time()))
     logcatname = testdir + "\\" + now + r"报告.html"
 

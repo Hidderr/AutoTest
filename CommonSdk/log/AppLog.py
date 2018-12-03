@@ -13,8 +13,9 @@ def log(filename='..\\testFFS.log',logtag='',loglevel='E'):
 
     # pi = subprocess.Popen(logcmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     # print(pi.stdout.read())
-
-    testdir = r"D:\machine_Learning\machine_pycharm\Common\CommonSdk\output"
+    dir = os.path.abspath(os.path.join(os.path.dirname('TestReport3.py'), os.path.pardir)) + "\output"
+    testdir = r'' + dir
+    # testdir = r"D:\machine_Learning\machine_pycharm\Common\CommonSdk\output"
     now = time.strftime('%Y-%m-%d-%H_%M_%S', time.localtime(time.time()))
     logcatname = testdir + "\\" +filename+ "_"+now + r"_logcat.log"
     cmd = "adb logcat *:"+loglevel+" -s "+logtag+" -f >%s" % (logcatname)
